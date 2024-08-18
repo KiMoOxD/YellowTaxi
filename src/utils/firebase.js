@@ -5,13 +5,14 @@ import { getAuth } from "firebase/auth";
 // https://firebase.google.com/docs/web/setup#available-libraries
 
 // Your web app's Firebase configuration
+
 const firebaseConfig = {
-  apiKey: "AIzaSyCNvtYGhvlTFwgYf6QMAurxqa9Qv4wgbfs",
-  authDomain: "yellowtaxi-64286.firebaseapp.com",
-  projectId: "yellowtaxi-64286",
-  storageBucket: "yellowtaxi-64286.appspot.com",
-  messagingSenderId: "340785484943",
-  appId: "1:340785484943:web:d6c1d4ea735dae016e0cfa"
+  apiKey: process.env.REACT_APP_FIREBASE_API_KEY,
+  authDomain: process.env.REACT_APP_FIREBASE_AUTH_DOMAIN,
+  projectId: process.env.REACT_APP_FIREBASE_PROJECT_ID,
+  storageBucket: process.env.REACT_APP_FIREBASE_STORAGE_BUCKET,
+  messagingSenderId: process.env.REACT_APP_FIREBASE_MESSAGING_SENDER_ID,
+  appId: process.env.REACT_APP_FIREBASE_APP_ID
 };
 
 // Initialize Firebase
