@@ -1,10 +1,13 @@
-import { CiUser } from "react-icons/ci";
 import Menu from "./menu";
 import { Link } from "react-router-dom";
 import NavLinks from "./NavLinks";
 import AuthPortal from "./AuthPortal";
+import { useAuth } from "../context/AuthContext";
+import AccountInfo from "./AccountInfo";
+
 
 export default function Header() {
+  let { currentUser, logout } = useAuth()
   return (
     <div className="flex sticky h-12 top-0 z-40 mx-auto justify-between items-center px-4 2xl:px-0">
       <Link to={`/`}>
@@ -15,8 +18,8 @@ export default function Header() {
       <NavLinks />
       
       <div className="flex gap-3 text-xl items-center cursor-pointer">
-        <AuthPortal />
-        <CiUser />
+        {!currentUser && <AuthPortal />}
+        {currentUser && <AccountInfo />}
         <Menu />
       </div>
     </div>

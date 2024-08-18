@@ -1,9 +1,63 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import { useRef, useState, useEffect } from "react";
+import { Link, useNavigate } from "react-router-dom";
 import { BsFillTaxiFrontFill } from "react-icons/bs";
 import { TextEffect } from "./TextEffect.tsx";
+import { useAuth } from "../context/AuthContext.js";
+import { LuShieldClose } from "react-icons/lu";
 
 export default function SignUp() {
+  let { signup, currentUser } = useAuth();
+  let [isErr, setIsErr] = useState({
+    status: false,
+    content: "",
+  });
+  let name = useRef();
+  let email = useRef();
+  let password = useRef();
+  let navigate = useNavigate();
+  let confirmpassword = useRef();
+  useEffect(() => {
+    if (currentUser) {
+      navigate("/");
+      return;
+    }
+  });
+  async function handleClick(e) {
+    e.preventDefault();
+    if (
+      !password.current.value ||
+      !confirmpassword.current.value ||
+      !email.current.value ||
+      !name.current.value
+    ) {
+      setIsErr({ status: true, content: "Please fill in all fields" });
+      return;
+    }
+    if (password.current.value !== confirmpassword.current.value) {
+      setIsErr({ status: true, content: 'Password doesn"t match!' });
+      return;
+    }
+    if (password.current.value.length < 6) {
+      setIsErr({
+        status: true,
+        content: "Password must be 6 characters or more",
+      });
+      return;
+    }
+
+    let response = await signup(
+      email.current.value,
+      password.current.value,
+      name.current.value
+    );
+
+    if (response && !response?.ok) {
+      setIsErr({ status: true, content: "email already in use" });
+      return;
+    }
+    navigate("/");
+  }
+
   return (
     <div className="">
       <section className="min-h-[90vh] flex items-center justify-center px-5 py-5 md:py-0">
@@ -20,18 +74,11 @@ export default function SignUp() {
                 <span className="sr-only">Home</span>
                 <BsFillTaxiFrontFill className="text-6xl" />
               </Link>
-{/* 
-              <h2 className="mt-6 text-2xl font-bold text-white sm:text-3xl md:text-4xl">
-                Welcome to Yellow Taxi Trip Assistant
-              </h2> */}
+
               <TextEffect className="my-6 text-xl font-bold text-white sm:text-2xl md:text-4xl">
                 Welcome to Yellow Taxi Trip Assistant
               </TextEffect>
 
-              {/* <p className="mt-4 leading-relaxed text-white/90">
-                Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-                Eligendi nam dolorum aliquam, quibusdam aperiam voluptatum.
-              </p> */}
               <TextEffect per="char" preset="fade">
                 Lorem, ipsum dolor sit amet consectetur adipisicing elit.
                 Eligendi nam dolorum aliquam, quibusdam aperiam voluptatum.
@@ -41,6 +88,12 @@ export default function SignUp() {
 
           <main className="flex items-center justify-center px-8 py-8 sm:px-12 lg:col-span-7 lg:px-12 lg:py-12 xl:col-span-6">
             <div className="max-w-xl lg:w-full">
+              {isErr.status && (
+                <p className="flex items-center gap-2">
+                  <LuShieldClose />
+                  {isErr.content}
+                </p>
+              )}
               <div className="relative -mt-16 block lg:hidden">
                 <Link
                   className="inline-flex size-16 items-center justify-center rounded-full bg-white text-stone-900 sm:size-20"
@@ -49,24 +102,19 @@ export default function SignUp() {
                   <span className="sr-only">Home</span>
                   <BsFillTaxiFrontFill className="text-4xl" />
                 </Link>
-{/* 
-                <h1 className="mt-2 text-2xl font-bold text-stone-100 sm:text-3xl md:text-4xl">
-                  Welcome to Trip Assistant 🦑
-                </h1> */}
 
                 <TextEffect className="my-2 text-xl font-bold text-white sm:text-2xl md:text-4xl">
-                Welcome to Yellow Taxi Trip Assistant
-              </TextEffect>
+                  Welcome to Yellow Taxi Trip Assistant
+                </TextEffect>
 
-                {/* <p className="mt-4 leading-relaxed text-stone-400">
+                <TextEffect
+                  per="char"
+                  preset="fade"
+                  className="mt-4 leading-relaxed text-stone-400"
+                >
                   Lorem, ipsum dolor sit amet consectetur adipisicing elit.
                   Eligendi nam dolorum aliquam, quibusdam aperiam voluptatum.
-                </p> */}
-
-                <TextEffect per="char" preset="fade" className="mt-4 leading-relaxed text-stone-400">
-                Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-                Eligendi nam dolorum aliquam, quibusdam aperiam voluptatum.
-              </TextEffect>
+                </TextEffect>
               </div>
 
               <form action="#" className="mt-8 grid grid-cols-6 gap-6">
@@ -83,6 +131,7 @@ export default function SignUp() {
                     id="FirstName"
                     name="first_name"
                     className="mt-1 p-2 outline-none w-full rounded-md border bg-transparent text-sm text-stone-300 shadow-sm"
+                    ref={name}
                   />
                 </div>
 
@@ -116,6 +165,7 @@ export default function SignUp() {
                     id="Email"
                     name="email"
                     className="mt-1 p-2 outline-none w-full rounded-md border bg-transparent text-sm text-stone-300 shadow-sm"
+                    ref={email}
                   />
                 </div>
 
@@ -133,6 +183,7 @@ export default function SignUp() {
                     id="Password"
                     name="password"
                     className="mt-1 p-2 outline-none w-full rounded-md border bg-transparent text-sm text-stone-300 shadow-sm"
+                    ref={password}
                   />
                 </div>
 
@@ -149,11 +200,15 @@ export default function SignUp() {
                     id="PasswordConfirmation"
                     name="password_confirmation"
                     className="mt-1 p-2 outline-none w-full rounded-md border bg-transparent text-sm text-stone-300 shadow-sm"
+                    ref={confirmpassword}
                   />
                 </div>
 
                 <div className="col-span-6 sm:flex sm:items-center sm:gap-4">
-                  <button className="inline-block shrink-0 rounded-md border border-white hover:bg-stone-50 hover:text-black px-8 py-2 text-sm font-medium text-white transition hover:bg-transparent focus:outline-none focus:ring active:text-blue-500">
+                  <button
+                    className="inline-block shrink-0 rounded-md border border-white hover:bg-stone-50 hover:text-black px-8 py-2 text-sm font-medium text-white transition hover:bg-transparent focus:outline-none focus:ring active:text-blue-500"
+                    onClick={handleClick}
+                  >
                     Create an account
                   </button>
 

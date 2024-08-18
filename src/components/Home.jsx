@@ -1,30 +1,133 @@
 import React from "react";
 import { TextEffect } from "./TextEffect.tsx";
+import { useAuth } from "../context/AuthContext.js";
+import { Link } from "react-router-dom";
 
 export default function Home() {
+  let { currentUser } = useAuth();
   return (
     <div>
-      Home
-      <TextEffect per="char" preset="fade">
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur,
-        facere quo? Voluptatibus modi repellat earum quia deleniti nostrum
-        molestias est dolorem saepe, a aliquid. Officiis corporis aperiam
-        provident alias distinctio.
-      </TextEffect>
+      <section className=" text-white min-h-[90vh] flex items-center justify-center">
+        <div className="mx-auto max-w-screen-xl px-4 py-8 sm:px-6 sm:py-12 lg:px-8 lg:py-16">
+          <div className="mx-auto max-w-lg text-center">
+            <h2 className="text-3xl font-bold sm:text-4xl">
+              Kickstart your Trip
+            </h2>
 
-      
-  <div class="relative mx-auto border-gray-800 dark:border-gray-800 bg-gray-800 border-[14px] rounded-[2.5rem] h-[600px] w-[300px] shadow-xl">
-      <div class="w-[148px] h-[18px] bg-gray-800 top-0 rounded-b-[1rem] left-1/2 -translate-x-1/2 absolute"></div>
-      <div class="h-[46px] w-[3px] bg-gray-800 absolute -start-[17px] top-[124px] rounded-s-lg"></div>
-      <div class="h-[46px] w-[3px] bg-gray-800 absolute -start-[17px] top-[178px] rounded-s-lg"></div>
-      <div class="h-[64px] w-[3px] bg-gray-800 absolute -end-[17px] top-[142px] rounded-e-lg"></div>
-      <div class="rounded-[2rem] overflow-hidden w-[272px] h-[572px] bg-white dark:bg-gray-800">
-          <img src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/hero/mockup-2-light.png" class="dark:hidden w-[272px] h-[572px]" alt="" />
-          <img src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/hero/mockup-2-dark.png" class="hidden dark:block w-[272px] h-[572px]" alt="" />
-      </div>
-  </div>
+            <TextEffect per="char" preset="fade" className="mt-4 text-gray-300">
+              Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+              Consequuntur aliquam doloribus nesciunt eos fugiat. Vitae aperiam
+              fugit consequuntur saepe laborum.
+            </TextEffect>
+          </div>
 
+          <div className="mt-8 grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3 cursor-pointer">
 
+            <div
+              className="block rounded-xl border border-gray-800 p-8 shadow-xl transition hover:border-stone-50/10 hover:shadow-stone-50/10"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                className="size-10 text-stone-100"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path d="M12 14l9-5-9-5-9 5 9 5z" />
+                <path d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z" />
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth="2"
+                  d="M12 14l9-5-9-5-9 5 9 5zm0 0l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14zm-4 6v-7.5l4-2.222"
+                />
+              </svg>
+
+              <h2 className="mt-4 text-xl font-bold text-white">
+                Digital campaigns
+              </h2>
+
+              <p className="mt-1 text-sm text-gray-300">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex ut
+                quo possimus adipisci distinctio alias voluptatum blanditiis
+                laudantium.
+              </p>
+            </div>
+
+            <div
+              className="block rounded-xl border border-gray-800 p-8 shadow-xl transition hover:border-stone-50/10 hover:shadow-stone-50/10"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                className="size-10 text-stone-100"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path d="M12 14l9-5-9-5-9 5 9 5z" />
+                <path d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z" />
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth="2"
+                  d="M12 14l9-5-9-5-9 5 9 5zm0 0l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14zm-4 6v-7.5l4-2.222"
+                />
+              </svg>
+
+              <h2 className="mt-4 text-xl font-bold text-white">
+                Digital campaigns
+              </h2>
+
+              <p className="mt-1 text-sm text-gray-300">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex ut
+                quo possimus adipisci distinctio alias voluptatum blanditiis
+                laudantium.
+              </p>
+            </div>
+
+            <div
+              className="block rounded-xl border border-gray-800 p-8 shadow-xl transition hover:border-stone-50/10 hover:shadow-stone-50/10"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                className="size-10 text-stone-100"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path d="M12 14l9-5-9-5-9 5 9 5z" />
+                <path d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z" />
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth="2"
+                  d="M12 14l9-5-9-5-9 5 9 5zm0 0l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14zm-4 6v-7.5l4-2.222"
+                />
+              </svg>
+
+              <h2 className="mt-4 text-xl font-bold text-white">
+                Digital campaigns
+              </h2>
+
+              <p className="mt-1 text-sm text-gray-300">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex ut
+                quo possimus adipisci distinctio alias voluptatum blanditiis
+                laudantium.
+              </p>
+            </div>
+
+          </div>
+
+          <div className="mt-12 text-center">
+            <Link
+              to={'/predict'}
+              className="inline-block rounded bg-pink-600 px-12 py-3 text-sm font-medium text-white transition hover:bg-pink-700 focus:outline-none focus:ring focus:ring-yellow-400"
+            >
+              Get Started Today
+            </Link>
+          </div>
+        </div>
+      </section>
     </div>
   );
 }
