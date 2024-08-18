@@ -1,10 +1,8 @@
 import React from "react";
 import { TextEffect } from "./TextEffect.tsx";
-import { useAuth } from "../context/AuthContext.js";
 import { Link } from "react-router-dom";
 
 export default function Home() {
-  let { currentUser } = useAuth();
   return (
     <div>
       <section className=" text-white min-h-[90vh] flex items-center justify-center">
