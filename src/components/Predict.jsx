@@ -1,5 +1,4 @@
-import React, { useEffect, useState } from "react";
-import { useAuth } from "../context/AuthContext";
+import React, { useState } from "react";
 import Select from "react-select";
 import zones from "../zones.json";
 import Slider from "@mui/material/Slider";
@@ -24,7 +23,6 @@ const PaymentOptions = [
 ];
 
 export default function Predict() {
-  let { currentUser } = useAuth();
   let [pickup, setPickUp] = useState(null);
   let [dropoff, setDropOff] = useState(null);
   let [vendor, setVendor] = useState(null);
