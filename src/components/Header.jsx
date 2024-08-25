@@ -11,8 +11,8 @@ export default function Header() {
   return (
     <div className="flex sticky h-12 top-0 z-40 mx-auto justify-between items-center px-4 2xl:px-0">
       <Link to={`/`}>
-        <h1 className="font-['Edu_AU_VIC_WA_NT_Hand'] drop-shadow-[0_0_5px_#ffffff70]">
-          Yellow Taxi!
+        <h1 className="font-['Edu_AU_VIC_WA_NT_Hand'] animate-[flicker_1s_ease-out_infinite] text-lg">
+          <span className="text-yellow-400">NYC</span> <span>T</span><span className="text-stone-400">a</span><span>x</span><span className="text-stone-400">i</span>!
         </h1>
       </Link>
       <NavLinks />

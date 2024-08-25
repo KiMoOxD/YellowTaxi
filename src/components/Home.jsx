@@ -51,17 +51,17 @@ export default function Home() {
             </div>
           </div>
 
-          <div class="relative drop-shadow-[0_0_10px_rgba(250,204,255,0.1)] mx-auto lg:mr-auto lg:ml-0 order-0 lg:order-1 border-gray-800 bg-gray-800 border-[14px] rounded-[2.5rem] h-[550px] w-[290px] shadow-xl">
-            <div class="z-10 w-[148px] h-[18px] bg-gray-800 top-0 rounded-b-[1rem] left-1/2 -translate-x-1/2 absolute"></div>
+          <div class="relative drop-shadow-[0_0_10px_rgba(250,204,255,0.1)] lg:min-w-[280px] mx-auto lg:mr-auto lg:ml-0 order-0 lg:order-1 border-gray-800 bg-gray-800 border-[14px] rounded-[2.5rem] h-[400px] lg:h-[550px] w-[210px] lg:w-[290px] shadow-xl">
+            <div class="z-10 w-[100px] lg:w-[148px] h-[18px] bg-gray-800 top-0 rounded-b-[1rem] left-1/2 -translate-x-1/2 absolute"></div>
             <div class="z-10 h-[46px] w-[3px] bg-gray-800 absolute -start-[17px] top-[124px] rounded-s-lg"></div>
             <div class="z-10 h-[46px] w-[3px] bg-gray-800 absolute -start-[17px] top-[178px] rounded-s-lg"></div>
             <div class="z-10 h-[64px] w-[3px] bg-gray-800 absolute -end-[17px] top-[142px] rounded-e-lg"></div>
             <div class="rounded-[2rem] overflow-hidden w-full h-full bg-white dark:bg-gray-800">
-              <div className="overflow-hidden absolute top-0 w-full rounded-[2.5rem] bg-[#374151] h-[200px]">
+              <div className="overflow-hidden absolute top-0 w-full rounded-[2.5rem] bg-[#374151] h-[130px] lg:h-[200px]">
                 <img
                   src={taxiimg}
                   alt="Taxi Animation"
-                  className="w-full absolute top-1/2 left-1/2 translate-x-[-50%] translate-y-[-50%]"
+                  className="w-full absolute top-[65%] lg:top-1/2 left-1/2 translate-x-[-50%] translate-y-[-50%]"
                 />
               </div>
               <img
