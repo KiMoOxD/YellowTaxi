@@ -23,3 +23,12 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+@keyframes flicker {
+  0% {
+    filter: drop-shadow(0 0 0);
+  }
+  100% {
+    filter: drop-shadow(0 0 50px rgba(250,204,21,0.5));
+  }
+}
