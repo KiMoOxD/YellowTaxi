@@ -11,12 +11,8 @@ const ScrollToTop = () => {
   let { currentUser } = useAuth()
   let navigate = useNavigate();
   let protectedPath = ['/predict']
-  let AuthPath = ['/signin', '/signup']
-
 
   useEffect(() => {
-    console.log(AuthPath.some(path => path === pathname))
-    console.log(currentUser)
     if (protectedPath.some(path => path === pathname)) {
       if (!currentUser) {
         navigate("/signin");
