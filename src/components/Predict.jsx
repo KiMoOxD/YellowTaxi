@@ -143,13 +143,13 @@ export default function Predict() {
         <TextEffect
           per="char"
           preset="slide"
-          className="text-center text-3xl font-semibold mb-14"
+          className="text-center text-xl md:text-3xl font-semibold mb-10 md:mb-14 mt-10"
         >
           Fare Prediction Service
         </TextEffect>
 
-        <div className="overflow-hidden flex gap-3">
-          <div>
+        <div className="overflow-hidden flex flex-col items-center md:flex-row gap-3">
+          <div className="order-1 md:order-0 px-5">
             <div className="flex items-center">
               <p className="text-xl">Hello, {currentUser?.displayName}</p>
               <img src={waving} alt="" className="w-10" />
@@ -164,7 +164,7 @@ export default function Predict() {
               we’ll handle the rest!
             </TextEffect>
           </div>
-          <img src={taxi} alt="" className="w-[250px] rounded-xl" />
+          <img src={taxi} alt="" className="w-[250px] rounded-xl order-0 md:order-1" />
         </div>
         <section>
           <div className="mx-auto max-w-screen-xl px-4 py-16 sm:px-6 lg:px-8">
@@ -305,7 +305,7 @@ export default function Predict() {
               <motion.div
                 initial={{ opacity: 0.1, y: -50 }}
                 animate={{ opacity: 1, y: 0 }}
-                className="relative mt-6 shadow-md rounded-lg flex justify-center gap-3"
+                className="relative mt-6 shadow-md rounded-lg flex flex-wrap justify-center gap-3"
               >
                 {/* <table className="w-full text-sm text-left rtl:text-right">
                   <thead className="text-xs uppercase border-b text-white">
