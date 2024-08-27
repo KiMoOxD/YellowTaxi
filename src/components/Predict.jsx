@@ -114,7 +114,7 @@ export default function Predict() {
     setLoading(true);
     try {
       const response = await fetch(
-        "https://absolute-shellie-taxiion-9e8a0081.koyeb.app/receive_data",
+        "https://fascinating-anthia-taxiion-cbf652c8.koyeb.app/receive_data",
         {
           method: "POST",
           headers: {
@@ -164,7 +164,11 @@ export default function Predict() {
               we’ll handle the rest!
             </TextEffect>
           </div>
-          <img src={taxi} alt="" className="w-[250px] rounded-xl order-0 md:order-1" />
+          <img
+            src={taxi}
+            alt=""
+            className="w-[250px] rounded-xl order-0 md:order-1"
+          />
         </div>
         <section>
           <div className="mx-auto max-w-screen-xl px-4 py-16 sm:px-6 lg:px-8">
@@ -381,7 +385,7 @@ export default function Predict() {
                 </motion.div>
                 <motion.div
                   initial={{ opacity: 0.1, y: -50, scale: 0.8 }}
-                  animate={{ opacity: 1, y: 0, scale:1 }}
+                  animate={{ opacity: 1, y: 0, scale: 1 }}
                   transition={{ delay: 0.1 }}
                   className="py-3 w-40 flex flex-col items-center gap-2 shadow-lg shadow-yellow-400/30 rounded-lg"
                 >
@@ -404,8 +408,12 @@ export default function Predict() {
                   className="py-3 w-40 flex flex-col items-center gap-2 shadow-lg shadow-yellow-400/30 rounded-lg"
                 >
                   <p className="text-sm text-yellow-400">Route</p>
-                  
-                  <a href={responseData.route_url} target="_blank" rel="noreferrer">
+
+                  <a
+                    href={responseData.route_url}
+                    target="_blank"
+                    rel="noreferrer"
+                  >
                     <LuMapPin className="text-xl" />
                   </a>
                 </motion.div>
