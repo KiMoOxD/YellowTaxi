@@ -79,10 +79,10 @@ export default function SignUp() {
                 Welcome to Yellow Taxi Trip Assistant
               </TextEffect>
 
-              <TextEffect per="char" preset="fade">
+              {/* <TextEffect per="char" preset="fade">
                 Lorem, ipsum dolor sit amet consectetur adipisicing elit.
                 Eligendi nam dolorum aliquam, quibusdam aperiam voluptatum.
-              </TextEffect>
+              </TextEffect> */}
             </div>
           </section>
 
@@ -107,14 +107,14 @@ export default function SignUp() {
                   Welcome to Yellow Taxi Trip Assistant
                 </TextEffect>
 
-                <TextEffect
+                {/* <TextEffect
                   per="char"
                   preset="fade"
                   className="mt-4 leading-relaxed text-stone-400"
                 >
                   Lorem, ipsum dolor sit amet consectetur adipisicing elit.
                   Eligendi nam dolorum aliquam, quibusdam aperiam voluptatum.
-                </TextEffect>
+                </TextEffect> */}
               </div>
 
               <form action="#" className="mt-8 grid grid-cols-6 gap-6">
@@ -206,14 +206,14 @@ export default function SignUp() {
 
                 <div className="col-span-6 sm:flex sm:items-center sm:gap-4">
                   <button
-                    className="inline-block shrink-0 rounded-md border border-white hover:bg-stone-50 hover:text-black px-8 py-2 text-sm font-medium text-white transition hover:bg-transparent focus:outline-none focus:ring active:text-blue-500"
+                    className="inline-block shrink-0 rounded-md border border-yellow-400 hover:bg-yellow-400 hover:text-black px-8 py-2 text-sm font-medium text-yellow-400 transition hover:bg-transparent focus:outline-none focus:ring active:text-blue-500"
                     onClick={handleClick}
                   >
                     Create an account
                   </button>
 
                   <p className="mt-4 text-sm text-stone-300 sm:mt-0">
-                    Already have an account?
+                    Already have an account?{' '}
                     <Link to={"/signin"} className="text-blue-700 underline">
                       Log in
                     </Link>

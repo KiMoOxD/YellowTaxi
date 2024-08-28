@@ -141,7 +141,7 @@ export default function Predict() {
     <div className="min-h-[90vh] flex items-center justify-center w-full">
       <div className="w-full sm:w-3/4 xl:w-1/2">
         <TextEffect
-          per="char"
+          per="word"
           preset="slide"
           className="text-center text-xl md:text-3xl font-semibold mb-10 md:mb-14 mt-10"
         >

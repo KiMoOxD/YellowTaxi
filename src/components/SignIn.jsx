@@ -91,7 +91,7 @@ export default function SignUp() {
 
                 <div className="col-span-6 sm:flex sm:items-center sm:gap-4">
                   <button
-                    className="inline-block shrink-0 rounded-md border border-white hover:bg-stone-50 hover:text-black px-8 py-2 text-sm font-medium text-white transition hover:bg-transparent focus:outline-none focus:ring"
+                    className="rounded-md border border-yellow-500 hover:bg-yellow-500 hover:text-black px-8 py-2 text-sm font-medium text-yellow-400 transition"
                     onClick={handleClick}
                   >
                     Log In
