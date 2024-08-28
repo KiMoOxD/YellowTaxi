@@ -294,6 +294,7 @@ export default function Predict() {
                 className=" mt-6 shadow-md rounded-lg grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 place-items-center gap-3"
               >
                 <motion.div
+                  key={responseData.prediction}
                   initial={{ opacity: 0.1, y: -50 }}
                   animate={{ opacity: 1, y: 0 }}
                   className="py-3 w-40 flex flex-col items-center gap-2 shadow-lg shadow-yellow-400/30 rounded-lg"
@@ -302,6 +303,7 @@ export default function Predict() {
                   <p>${responseData.prediction.toFixed(2)}</p>
                 </motion.div>
                 <motion.div
+                  key={responseData.distance_kilometers}
                   initial={{ opacity: 0.1, y: -50, scale: 0.8 }}
                   animate={{ opacity: 1, y: 0, scale: 1 }}
                   transition={{ delay: 0.1 }}
@@ -311,6 +313,7 @@ export default function Predict() {
                   <p>{responseData.distance_kilometers.toFixed(2)} KM</p>
                 </motion.div>
                 <motion.div
+                  key={responseData.duration_minutes}
                   initial={{ opacity: 0.1, y: -50, scale: 0.8 }}
                   animate={{ opacity: 1, y: 0, scale: 1 }}
                   transition={{ delay: 0.2 }}
@@ -320,6 +323,7 @@ export default function Predict() {
                   <p>{responseData.duration_minutes.toFixed(2)} Min</p>
                 </motion.div>
                 <motion.div
+                  key={responseData.route_url}
                   initial={{ opacity: 0.1, y: -50, scale: 0.8 }}
                   animate={{ opacity: 1, y: 0, scale: 1 }}
                   transition={{ delay: 0.3 }}

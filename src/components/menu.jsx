@@ -19,7 +19,7 @@ export default function Menu() {
             animate={{ opacity: 1, x: 0 }}
             exit={{ opacity: 0, x: 50 }}
             transition={{ type: "spring" }}
-            className="h-[98vh] w-[100vw] *:w-full *:text-center md:w-96 absolute top-[180%] right-[-75%] pt-14 flex flex-col gap-2 bg-[#0c0b1549] border border-stone-50/10 bg-gradient-to-br from-stone-950 via-stone-900 to-stone-800 shadow rounded-sm"
+            className="h-[98vh] w-[100vw] *:w-full *:text-center md:w-96 absolute top-[180%] right-[-75%] pt-14 flex flex-col gap-2 border border-stone-50/10 bg-gradient-to-br from-stone-950 via-stone-900 to-stone-800 rounded-sm"
           >
             <div
               className="text-white text-2xl absolute top-5 left-5"
@@ -28,17 +28,17 @@ export default function Menu() {
               <IoMdExit />
             </div>
             <NavLink onClick={toggleMenu} to={"/"}>
-              <div className="hover:bg-[#ffffff2f] py-3 border border-stone-50/0 hover:border-stone-50/25 hover:backdrop-blur-lg shadow text-stone-50 hover:text-stone-200 transition">
+              <div className="py-3 border border-stone-50/0 hover:border-stone-50/25 hover:bg-stone-50/5 shadow text-stone-50 hover:text-stone-200 transition">
                 Home
               </div>
             </NavLink>
             <NavLink onClick={toggleMenu} to={"/predict"}>
-              <div className="hover:bg-[#ffffff2f] py-3 border border-stone-50/0 hover:border-stone-50/25 hover:backdrop-blur-lg shadow text-stone-50 hover:text-stone-200 transition">
+              <div className="py-3 border border-stone-50/0 hover:border-stone-50/25 hover:bg-stone-50/5 shadow text-stone-50 hover:text-stone-200 transition">
                 Predict
               </div>
             </NavLink>
             <NavLink onClick={toggleMenu} to={"/about"}>
-              <div className="hover:bg-[#ffffff2f] py-3 border border-stone-50/0 hover:border-stone-50/25 hover:backdrop-blur-lg shadow text-stone-50 hover:text-stone-200 transition">
+              <div className="py-3 border border-stone-50/0 hover:border-stone-50/25 hover:bg-stone-50/5 shadow text-stone-50 hover:text-stone-200 transition">
                 About
               </div>
             </NavLink>
