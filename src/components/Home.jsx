@@ -44,7 +44,7 @@ export default function Home() {
             <div className="mt-8">
               <Link
                 to={"/predict"}
-                className="inline-block rounded bg-transparent px-12 py-3 text-sm font-medium text-yellow-400 border shadow-xl border-yellow-400 transition hover:shadow-yellow-500/50 hover:bg-yellow-400/80 hover:text-black focus:outline-none focus:ring focus:ring-yellow-400"
+                className="inline-block rounded bg-transparent px-12 py-3 text-sm font-medium text-yellow-400 border lg:shadow-xl border-yellow-400 transition hover:shadow-yellow-500/50 hover:bg-yellow-400/80 hover:text-black focus:outline-none focus:ring focus:ring-yellow-400"
               >
                 Get Started Today
               </Link>
