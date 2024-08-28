@@ -19,7 +19,7 @@ export default function Menu() {
             animate={{ opacity: 1, x: 0 }}
             exit={{ opacity: 0, x: 50 }}
             transition={{ type: "spring" }}
-            className="h-[98vh] w-[100vw] *:w-full *:text-center md:w-96 absolute top-[198%] right-[-75%] pt-14 flex flex-col gap-2 bg-[#0c0b1549] border border-stone-50/10 backdrop-blur-md shadow rounded-sm"
+            className="h-[98vh] w-[100vw] *:w-full *:text-center md:w-96 absolute top-[180%] right-[-75%] pt-14 flex flex-col gap-2 bg-[#0c0b1549] border border-stone-50/10 bg-gradient-to-br from-stone-900 via-stone-800 to-stone-700 shadow rounded-sm"
           >
             <div
               className="text-white text-2xl absolute top-5 left-5"
