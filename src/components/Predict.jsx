@@ -114,7 +114,7 @@ export default function Predict() {
     setLoading(true);
     try {
       const response = await fetch(
-        "https://fascinating-anthia-taxiion-cbf652c8.koyeb.app/receive_data",
+        "https://skilled-raphaela-haxnode-fb7b0818.koyeb.app/receive_data",
         {
           method: "POST",
           headers: {
