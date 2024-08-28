@@ -32,6 +32,11 @@ export default function Menu() {
               Predict
             </div>
           </NavLink>
+          <NavLink onClick={toggleMenu} to={"/about"}>
+            <div className="hover:bg-[#ffffff2f] py-3 border border-stone-50/0 hover:border-stone-50/25 hover:backdrop-blur-lg shadow text-stone-50 hover:text-stone-200 transition">
+              About
+            </div>
+          </NavLink>
         </div>
       )}
       {isMenuOpen && (

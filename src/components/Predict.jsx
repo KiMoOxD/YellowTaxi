@@ -139,7 +139,7 @@ export default function Predict() {
 
   return (
     <div className="min-h-[90vh] flex items-center justify-center w-full">
-      <div className="w-full sm:w-3/4 lg:w-1/2">
+      <div className="w-full sm:w-3/4 xl:w-1/2">
         <TextEffect
           per="char"
           preset="slide"
@@ -164,7 +164,10 @@ export default function Predict() {
               we’ll handle the rest!
             </TextEffect>
           </div>
-          <img
+          <motion.img
+            initial={{ opacity: 0, scale: 0.1, x: 50 }}
+            animate={{ opacity: 1, scale: 1, x: 0 }}
+            transition={{ type: "spring" }}
             src={taxi}
             alt=""
             className="w-[250px] rounded-xl order-0 md:order-1"
@@ -175,7 +178,11 @@ export default function Predict() {
             <div className="rounded-lg border p-8 shadow-lg lg:col-span-3 lg:p-10">
               <form action="#" className="space-y-4">
                 <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
-                  <div>
+                  <motion.div
+                    initial={{ opacity: 0, x: -50 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    transition={{ type: "spring" }}
+                  >
                     <Select
                       required
                       onChange={(option) => setVendor(option)}
@@ -184,9 +191,13 @@ export default function Predict() {
                       placeholder="Choose vendor"
                       styles={customStyles}
                     />
-                  </div>
+                  </motion.div>
 
-                  <div>
+                  <motion.div
+                    initial={{ opacity: 0, x: 50 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    transition={{ type: "spring" }}
+                  >
                     <Select
                       required
                       onChange={(option) => setPayment(option)}
@@ -195,9 +206,14 @@ export default function Predict() {
                       placeholder="Payment Type"
                       styles={customStyles}
                     />
-                  </div>
+                  </motion.div>
                 </div>
-                <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
+                <motion.div
+                  initial={{ opacity: 0, x: 50 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ type: "spring" }}
+                  className="grid grid-cols-1 gap-4 sm:grid-cols-2"
+                >
                   <Select
                     required
                     onChange={(option) => setPickUp(option)}
@@ -214,10 +230,15 @@ export default function Predict() {
                     placeholder="Dropoff Location"
                     styles={customStyles}
                   />
-                </div>
+                </motion.div>
 
                 <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
-                  <div className="flex flex-col items-center justify-center px-2">
+                  <motion.div
+                    initial={{ opacity: 0, x: -50 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    transition={{ type: "spring" }}
+                    className="flex flex-col items-center justify-center px-2"
+                  >
                     <p className="text-xs">Number of Passengers:</p>
                     <Slider
                       aria-label="Passengers"
@@ -230,78 +251,39 @@ export default function Predict() {
                       min={1}
                       max={6}
                     />
-                  </div>
+                  </motion.div>
 
                   <div>
                     <label className="sr-only" htmlFor="dateInput">
                       Day
                     </label>
-                    <input
+                    <motion.input
                       type="date"
                       id="dateInput"
                       name="dateInput"
                       min={minDate}
                       step="1"
                       ref={dateInputRef}
+                      initial={{ opacity: 0, x: 50 }}
+                      animate={{ opacity: 1, x: 0 }}
+                      transition={{ type: "spring" }}
                       onClick={handleDateClick}
                       className="w-full dark:[color-scheme:dark] text-white rounded-lg bg-transparent outline-none border border-gray-200 p-2 text-sm"
                     />
                   </div>
                 </div>
 
-                <div className="mt-4 flex justify-center">
                   <motion.button
                     type="button"
-                    className="flex items-center w-full rounded-lg border border-yellow-500 hover:bg-yellow-500 hover:text-black transition px-10 py-3 font-medium text-white sm:w-auto gap-1"
+                    className="flex items-center mx-auto w-fit text-yellow-400 rounded-lg border shadow-lg border-yellow-500 hover:shadow-yellow-500/70 hover:bg-yellow-500 hover:text-black transition px-10 py-3 font-medium gap-1"
                     onClick={handleSubmit}
-                    whileHover={{ scale: 1.05 }}
-                    transition={{
-                      type: "spring",
-                      duration: "200ms",
-                      stiffness: 100,
-                    }}
+                    initial={{ opacity: 0.1, scale: 0.1, y: 30 }}
+                    animate={{ opacity: 1, scale: 1, y: 0 }}
+                    
                   >
                     {loading && <LuLoader2 className="animate-spin" />}{" "}
                     Calculate
                   </motion.button>
-                </div>
-                {/* 
-                <div className="border p-5 rounded">
-                  {responseData?.prediction && (
-                    <p className="text-sm">
-                      Trip Price : $
-                      {responseData?.prediction &&
-                        responseData.prediction.toFixed(2)}
-                    </p>
-                  )}
-                  {responseData?.distance_kilometers && (
-                    <p className="text-sm">
-                      Distance :
-                      {responseData?.distance_kilometers &&
-                        responseData.distance_kilometers.toFixed(2)}{" "}
-                      KM
-                    </p>
-                  )}
-                  {responseData?.duration_minutes && (
-                    <p className="text-sm">
-                      Trip Price :{" "}
-                      {responseData?.duration_minutes &&
-                        responseData.duration_minutes.toFixed(2)}{" "}
-                      Min
-                    </p>
-                  )}
-                  {responseData?.route_url && (
-                    <p className="text-sm text-wrap truncate">
-                      Google Maps Route :{" "}
-                      {responseData?.route_url && responseData.route_url}{" "}
-                    </p>
-                  )}
-                  {responseData?.value && (
-                    <p className="text-sm text-red-500">
-                      {responseData?.value && responseData.value}
-                    </p>
-                  )}
-                </div> */}
               </form>
             </div>
 
@@ -309,72 +291,8 @@ export default function Predict() {
               <motion.div
                 initial={{ opacity: 0.1, y: -50 }}
                 animate={{ opacity: 1, y: 0 }}
-                className="relative mt-6 shadow-md rounded-lg flex flex-wrap justify-center gap-3"
+                className=" mt-6 shadow-md rounded-lg grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 place-items-center gap-3"
               >
-                {/* <table className="w-full text-sm text-left rtl:text-right">
-                  <thead className="text-xs uppercase border-b text-white">
-                    <tr>
-                      <th
-                        scope="col"
-                        className="px-6 py-3 drop-shadow-[0_0_35px_#ffffff]"
-                      >
-                        Key
-                      </th>
-                      <th scope="col" className="px-6 py-3 border-l">
-                        Value
-                      </th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr className="border-b">
-                      <th
-                        scope="row"
-                        className="px-6 py-4 font-medium whitespace-nowrap text-stone-100"
-                      >
-                        Fare Amount
-                      </th>
-                      <td className="px-6 py-4 border-l">
-                        ${responseData.prediction.toFixed(2)}
-                      </td>
-                    </tr>
-                    <tr className="border-b">
-                      <th
-                        scope="row"
-                        className="px-6 py-4 font-medium whitespace-nowrap text-stone-100"
-                      >
-                        Distance
-                      </th>
-                      <td className="px-6 py-4 border-l">
-                        {responseData.distance_kilometers.toFixed(2)} KM
-                      </td>
-                    </tr>
-                    <tr className="border-b">
-                      <th
-                        scope="row"
-                        className="px-6 py-4 font-medium whitespace-nowrap text-stone-100"
-                      >
-                        Duration
-                      </th>
-                      <td className="px-6 py-4 border-l">
-                        {responseData.duration_minutes.toFixed(2)} Min
-                      </td>
-                    </tr>
-                    <tr className="border-b">
-                      <th
-                        scope="row"
-                        className="px-6 py-4 font-medium whitespace-nowrap text-stone-100 flex gap-1 items-center"
-                      >
-                        Route
-                      </th>
-                      <td className="px-6 py-4 border-l">
-                        <a href={responseData.route_url} target="_blank">
-                          <LuMapPin className="text-xl" />
-                        </a>
-                      </td>
-                    </tr>
-                  </tbody>
-                </table> */}
-
                 <motion.div
                   initial={{ opacity: 0.1, y: -50 }}
                   animate={{ opacity: 1, y: 0 }}
@@ -405,7 +323,7 @@ export default function Predict() {
                   initial={{ opacity: 0.1, y: -50, scale: 0.8 }}
                   animate={{ opacity: 1, y: 0, scale: 1 }}
                   transition={{ delay: 0.3 }}
-                  className="py-3 w-40 flex flex-col items-center gap-2 shadow-lg shadow-yellow-400/30 rounded-lg"
+                  className="py-3 w-40 flex flex-col mx-auto items-center gap-2 shadow-lg shadow-yellow-400/30 rounded-lg"
                 >
                   <p className="text-sm text-yellow-400">Route</p>
 
@@ -422,10 +340,10 @@ export default function Predict() {
             <AnimatePresence>
               {responseData && responseData.value && (
                 <motion.p
-                  initial={{ opacity: 0, y: -50 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  exit={{ opacity: 0, y: -50 }}
-                  className="py-2 px-4 text-red-500 rounded-lg border mb-3"
+                  initial={{ height: 0, width: 0, opacity: 0, y: -50 }}
+                  animate={{ height: "40px", width: "200px", opacity: 1, y: 0 }}
+                  exit={{ height: 0, width: 0, opacity: 0, y: -50 }}
+                  className="py-2 px-4 text-center mx-auto overflow-hidden top-1/2 left-1/2 text-red-500 rounded-lg border mt-3"
                 >
                   {responseData.value}
                 </motion.p>

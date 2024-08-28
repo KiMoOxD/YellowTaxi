@@ -7,6 +7,7 @@ import SignUp from "./components/SignUp";
 import SignIn from "./components/SignIn";
 import AuthProvider from "./context/AuthContext";
 import ErrorPage from './components/error'
+import AboutPage from './components/About/AboutPage'
 
 const router = createBrowserRouter([
   {
@@ -19,6 +20,7 @@ const router = createBrowserRouter([
       { path: "predict", element: <Predict /> },
       { path: "signup", element: <SignUp /> },
       { path: "signin", element: <SignIn /> },
+      { path: "about", element: <AboutPage /> },
     ],
   },
 ]);

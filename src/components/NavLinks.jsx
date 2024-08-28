@@ -30,6 +30,14 @@ export default function NavLinks() {
             Predict
           </button>
         </NavLink>
+        <NavLink to={"/about"} data-id={"about"}>
+          <button
+            type="button"
+            className="w-24 py-1 h-fit flex justify-center items-center text-sm text-white hover:text-zinc-600 transition-colors duration-300 dark:text-stone-400 dark:hover:text-zinc-50"
+          >
+            About
+          </button>
+        </NavLink>
       </AnimatedBackground>
     </div>
   );
