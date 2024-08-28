@@ -9,17 +9,17 @@ export default function Menu() {
   let { isMenuOpen, toggleMenu } = useGeneralContext();
 
   return (
-    <div className="lg:hidden text-xl cursor-pointer relative">
+    <div className="lg:hidden text-xl cursor-pointer">
       {!isMenuOpen && <CiMenuBurger onClick={toggleMenu} />}
       {isMenuOpen && <IoMdClose onClick={toggleMenu} />}
       <AnimatePresence>
         {isMenuOpen && (
           <motion.div
-            initial={{ opacity: 0, translateX: '50px' }}
+            initial={{ opacity: 0, translateX: '10px' }}
             animate={{ opacity: 1, translateX: '0px' }}
-            exit={{ opacity: 0, translateX: '50px' }}
+            exit={{ opacity: 0, translateX: '10px' }}
             transition={{ type: "tween"}}
-            className="h-[98vh] w-[99vw] *:w-full *:text-center md:w-96 absolute top-[180%] right-[-75%] pt-14 flex flex-col gap-2 border border-stone-50/10 bg-gradient-to-br from-stone-950 via-stone-900 to-stone-800 rounded-sm"
+            className="h-[calc(100vh_-_48px)] w-[100vw] *:w-full *:text-center md:w-96 absolute top-[48px] right-0 pt-14 flex flex-col gap-2 border border-stone-50/10 bg-gradient-to-br from-stone-950 via-stone-900 to-stone-800 rounded-sm"
           >
             <div
               className="text-white text-2xl absolute top-5 left-5"
@@ -46,7 +46,7 @@ export default function Menu() {
         )}
       </AnimatePresence>
       {isMenuOpen && (
-        <div className="top-6 left-1.5 animate-bounce border-b-4 border-r-4 border-l-4 border-b-stone-50 border-transparent bg-transparent size-2.5 bg-slate-800 absolute"></div>
+        <div className="top-8 right-5 animate-bounce border-b-4 border-r-4 border-l-4 border-b-stone-50 border-transparent bg-transparent size-2.5 bg-slate-800 absolute"></div>
       )}
     </div>
   );
