@@ -15,11 +15,11 @@ export default function Menu() {
       <AnimatePresence>
         {isMenuOpen && (
           <motion.div
-            initial={{ opacity: 0, translateX: '-50px' }}
+            initial={{ opacity: 0, translateX: '50px' }}
             animate={{ opacity: 1, translateX: '0px' }}
             exit={{ opacity: 0, translateX: '50px' }}
-            transition={{ type: "spring", stiffness: 300 }}
-            className="h-[98vh] w-[100vw] *:w-full *:text-center md:w-96 absolute top-[180%] right-[-75%] pt-14 flex flex-col gap-2 border border-stone-50/10 bg-gradient-to-br from-stone-950 via-stone-900 to-stone-800 rounded-sm"
+            transition={{ type: "tween"}}
+            className="h-[98vh] w-[99vw] *:w-full *:text-center md:w-96 absolute top-[180%] right-[-75%] pt-14 flex flex-col gap-2 border border-stone-50/10 bg-gradient-to-br from-stone-950 via-stone-900 to-stone-800 rounded-sm"
           >
             <div
               className="text-white text-2xl absolute top-5 left-5"
