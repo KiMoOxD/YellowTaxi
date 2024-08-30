@@ -50,6 +50,6 @@ code {
   }
 }
 
-.will-change-transform {
-  will-change: transform, opacity;
+.trans {
+  transition: all 0.3s;
 }
