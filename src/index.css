@@ -4,20 +4,14 @@
 
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background: url(./graph-pattern.gif), radial-gradient(58.79% 82.68% at 19.65% 7.75%, #272727 0, #171717 100%);
   background-blend-mode: multiply, normal;
   min-height: 100vh;
   min-width: 100%;
-  color: #eee;
-  font-family: Barlow, sans-serif;
-  font-size: 15px;
-  line-height: 23px;
   overflow-x: hidden;
+  color: white;
 }
 
 code {
@@ -50,6 +44,7 @@ code {
   }
 }
 
-.trans {
-  transition: all 0.3s;
+div {
+  will-change: transform;
+  transition: transform 0.5s ease;
 }
