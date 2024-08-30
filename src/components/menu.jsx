@@ -16,11 +16,11 @@ export default function Menu() {
       <AnimatePresence>
         {isMenuOpen && (
           <motion.div
-            initial={{ opacity: 0, scaleX: 0.5 }}
-            animate={{ opacity: 1, scaleX: 1 }}
-            exit={{ opacity: 0, scaleX: 0.5 }}
-            // transition={{ duration: 0}}
-            className="h-[calc(100vh_-_48px)] origin-right w-[100vw] *:w-full *:text-center md:w-96 absolute top-[34px] -right-4 pt-14 flex flex-col gap-2 border border-stone-50/10 bg-stone-900 rounded-sm"
+            initial={{ opacity: 0, x: '20px' }}
+            animate={{ opacity: 1, x: '0' }}
+            exit={{ opacity: 0, x: '20px' }}
+            transition={{ duration: 0.3, ease: 'easeOut'}}
+            className="h-[calc(100vh_-_48px)] origin-right w-[100vw] *:w-full *:text-center md:w-96 absolute top-[48px] right-0 pt-14 flex flex-col gap-2 border border-stone-50/10 bg-stone-900 rounded-sm"
           >
             <div
               className="text-white text-2xl absolute top-5 left-5"
@@ -47,7 +47,7 @@ export default function Menu() {
         )}
       </AnimatePresence>
       {isMenuOpen && (
-        <div className="top-5 right-1 animate-bounce border-b-4 border-r-4 border-l-4 border-b-stone-50 border-transparent bg-transparent size-2.5 bg-slate-800 absolute"></div>
+        <div className="top-8 right-5 animate-bounce border-b-4 border-r-4 border-l-4 border-b-stone-50 border-transparent bg-transparent size-2.5 bg-slate-800 absolute"></div>
       )}
     </div>
   );

@@ -44,7 +44,7 @@ code {
   }
 }
 
-div {
+/* div {
   will-change: transform;
   transition: transform 0.5s ease;
-}
+} */
