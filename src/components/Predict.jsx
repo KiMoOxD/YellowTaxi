@@ -142,8 +142,8 @@ export default function Predict() {
       <div className="w-full sm:w-3/4 xl:w-1/2">
         <TextEffect
           per="word"
-          preset="slide"
-          className="text-center text-xl md:text-3xl font-semibold mb-10 md:mb-14 mt-10"
+          preset="shake"
+          className="text-center text-xl text-yellow-500 md:text-3xl font-semibold mb-10 md:mb-14 mt-10"
         >
           Fare Prediction Service
         </TextEffect>
@@ -154,11 +154,11 @@ export default function Predict() {
               <p className="text-xl">Hello, {currentUser?.displayName}</p>
               <img src={waving} alt="" className="w-10" />
             </div>
-            <TextEffect per="char" preset="fade" className="mt-3 mb-5">
+            <TextEffect per="word" preset="fade" className="mt-3 mb-5">
               Accurate Fare Estimates for Your Next Ride Planning a trip and
               need a precise fare estimate?
             </TextEffect>
-            <TextEffect per="char" preset="scale">
+            <TextEffect per="word" preset="blur">
               Our tool uses advanced machine learning and real-time data to give
               you accurate fare predictions. Just enter your trip details, and
               we’ll handle the rest!
@@ -172,7 +172,12 @@ export default function Predict() {
         </div>
         <section>
           <div className="mx-auto max-w-screen-xl px-4 py-16 sm:px-6 lg:px-8">
-            <motion.div initial={{opacity: 0, y: '-20px'}} animate={{opacity: 1, y: '0'}} transition={{ duration: 0.5, type: 'tween'}} className="rounded-lg border p-8 shadow-lg lg:col-span-3 lg:p-10">
+            <motion.div
+              initial={{ opacity: 0, y: "-20px" }}
+              animate={{ opacity: 1, y: "0" }}
+              transition={{ duration: 0.5, type: "tween" }}
+              className="rounded-tl-3xl rounded-br-3xl border p-8 shadow-lg lg:col-span-3 lg:p-10"
+            >
               <form action="#" className="space-y-4">
                 <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
                   <div>
@@ -197,9 +202,7 @@ export default function Predict() {
                     />
                   </div>
                 </div>
-                <div
-                  className="grid grid-cols-1 gap-4 sm:grid-cols-2"
-                >
+                <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
                   <Select
                     required
                     onChange={(option) => setPickUp(option)}
@@ -219,9 +222,7 @@ export default function Predict() {
                 </div>
 
                 <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
-                  <div
-                    className="flex flex-col items-center justify-center px-2"
-                  >
+                  <div className="flex flex-col items-center justify-center px-2">
                     <p className="text-xs">Number of Passengers:</p>
                     <Slider
                       aria-label="Passengers"
@@ -254,14 +255,13 @@ export default function Predict() {
                   </div>
                 </div>
 
-                  <button
-                    type="button"
-                    className="flex items-center mx-auto w-fit text-yellow-400 rounded-lg border shadow-lg border-yellow-500 hover:shadow-yellow-500/70 hover:bg-yellow-500 hover:text-black transition px-10 py-3 font-medium gap-1"
-                    onClick={handleSubmit}
-                  >
-                    {loading && <LuLoader2 className="animate-spin" />}{" "}
-                    Calculate
-                  </button>
+                <button
+                  type="button"
+                  className="flex items-center mx-auto w-fit text-yellow-400 rounded border shadow-lg border-yellow-500 hover:shadow-yellow-500/70 hover:bg-yellow-500 hover:text-black transition px-10 py-2 gap-1"
+                  onClick={handleSubmit}
+                >
+                  {loading && <LuLoader2 className="animate-spin" />} Calculate
+                </button>
               </form>
             </motion.div>
 

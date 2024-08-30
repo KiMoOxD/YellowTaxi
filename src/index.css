@@ -35,6 +35,17 @@ code {
 }
 
 ::selection {
-  background-color: rgba(250,204,21,0.5);
+  background-color: rgba(250,204,21,0.7);
   color: black;
+}
+
+@keyframes slide {
+  from {
+    right: -20px;
+    opacity: 0;
+  }
+  to {
+    right: 0;
+    opacity: 1;
+  }
 }
