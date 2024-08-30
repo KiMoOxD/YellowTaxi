@@ -164,10 +164,7 @@ export default function Predict() {
               we’ll handle the rest!
             </TextEffect>
           </div>
-          <motion.img
-            initial={{ opacity: 0, scale: 0.1, x: 50 }}
-            animate={{ opacity: 1, scale: 1, x: 0 }}
-            transition={{ type: "spring" }}
+          <img
             src={taxi}
             alt=""
             className="w-[250px] rounded-xl order-0 md:order-1"
