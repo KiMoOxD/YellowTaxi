@@ -172,14 +172,10 @@ export default function Predict() {
         </div>
         <section>
           <div className="mx-auto max-w-screen-xl px-4 py-16 sm:px-6 lg:px-8">
-            <div className="rounded-lg border p-8 shadow-lg lg:col-span-3 lg:p-10">
+            <motion.div initial={{opacity: 0, y: '-20px'}} animate={{opacity: 1, y: '0'}} transition={{ duration: 0.5, type: 'tween'}} className="rounded-lg border p-8 shadow-lg lg:col-span-3 lg:p-10">
               <form action="#" className="space-y-4">
                 <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
-                  <motion.div
-                    initial={{ opacity: 0, x: -50 }}
-                    animate={{ opacity: 1, x: 0 }}
-                    transition={{ type: "spring" }}
-                  >
+                  <div>
                     <Select
                       required
                       onChange={(option) => setVendor(option)}
@@ -188,13 +184,9 @@ export default function Predict() {
                       placeholder="Choose vendor"
                       styles={customStyles}
                     />
-                  </motion.div>
+                  </div>
 
-                  <motion.div
-                    initial={{ opacity: 0, x: 50 }}
-                    animate={{ opacity: 1, x: 0 }}
-                    transition={{ type: "spring" }}
-                  >
+                  <div>
                     <Select
                       required
                       onChange={(option) => setPayment(option)}
@@ -203,12 +195,9 @@ export default function Predict() {
                       placeholder="Payment Type"
                       styles={customStyles}
                     />
-                  </motion.div>
+                  </div>
                 </div>
-                <motion.div
-                  initial={{ opacity: 0, x: 50 }}
-                  animate={{ opacity: 1, x: 0 }}
-                  transition={{ type: "spring" }}
+                <div
                   className="grid grid-cols-1 gap-4 sm:grid-cols-2"
                 >
                   <Select
@@ -227,13 +216,10 @@ export default function Predict() {
                     placeholder="Dropoff Location"
                     styles={customStyles}
                   />
-                </motion.div>
+                </div>
 
                 <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
-                  <motion.div
-                    initial={{ opacity: 0, x: -50 }}
-                    animate={{ opacity: 1, x: 0 }}
-                    transition={{ type: "spring" }}
+                  <div
                     className="flex flex-col items-center justify-center px-2"
                   >
                     <p className="text-xs">Number of Passengers:</p>
@@ -248,41 +234,36 @@ export default function Predict() {
                       min={1}
                       max={6}
                     />
-                  </motion.div>
+                  </div>
 
                   <div>
                     <label className="sr-only" htmlFor="dateInput">
                       Day
                     </label>
-                    <motion.input
+                    <input
                       type="date"
                       id="dateInput"
                       name="dateInput"
                       min={minDate}
                       step="1"
+                      placeholder="Choose day"
                       ref={dateInputRef}
-                      initial={{ opacity: 0, x: 50 }}
-                      animate={{ opacity: 1, x: 0 }}
-                      transition={{ type: "spring" }}
                       onClick={handleDateClick}
-                      className="w-full dark:[color-scheme:dark] text-white rounded-lg bg-transparent outline-none border border-gray-200 p-2 text-sm"
+                      className="w-full dark:[color-scheme:dark] text-white rounded bg-transparent outline-none border border-stone-500 hover:border-white p-2 text-sm"
                     />
                   </div>
                 </div>
 
-                  <motion.button
+                  <button
                     type="button"
                     className="flex items-center mx-auto w-fit text-yellow-400 rounded-lg border shadow-lg border-yellow-500 hover:shadow-yellow-500/70 hover:bg-yellow-500 hover:text-black transition px-10 py-3 font-medium gap-1"
                     onClick={handleSubmit}
-                    initial={{ opacity: 0.1, scale: 0.1, y: 30 }}
-                    animate={{ opacity: 1, scale: 1, y: 0 }}
-                    
                   >
                     {loading && <LuLoader2 className="animate-spin" />}{" "}
                     Calculate
-                  </motion.button>
+                  </button>
               </form>
-            </div>
+            </motion.div>
 
             {responseData && responseData.prediction && (
               <motion.div

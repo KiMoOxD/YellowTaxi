@@ -4,34 +4,10 @@ import { NavLink } from "react-router-dom";
 import { IoMdClose } from "react-icons/io";
 import { useGeneralContext } from "../context/GeneralContext";
 import { AnimatePresence, motion } from "framer-motion";
-import { useState, useEffect } from "react";
-
-function useWindowWidth() {
-  const [width, setWidth] = useState(window.innerWidth);
-
-  useEffect(() => {
-    const handleResize = () => setWidth(window.innerWidth);
-    window.addEventListener('resize', handleResize);
-    return () => window.removeEventListener('resize', handleResize);
-  }, []);
-
-  return width;
-}
 
 export default function Menu() {
-  let { isMenuOpen, toggleMenu } = useGeneralContext(),
-      width = useWindowWidth(),
-      isMobile = width < 768,
-      mobileVariants = {
-        hidden: { opacity: 0, width: '50vw' },
-        visible: { opacity: 1, width: '100vw', transition: { type: "spring" } },
-        exit: { opacity: 0, width: '50vw' }
-      },
-      desktopVariants = {
-        hidden: { opacity: 0, width: '10vw' },
-        visible: { opacity: 1, width: '50vw', transition: { type: "spring" } },
-        exit: { opacity: 0, width: '50vw' }
-      };
+  let { isMenuOpen, toggleMenu } = useGeneralContext()
+  console.log('menu')
 
   return (
     <div className="lg:hidden text-xl cursor-pointer">
@@ -40,15 +16,11 @@ export default function Menu() {
       <AnimatePresence>
         {isMenuOpen && (
           <motion.div
-            // initial={{ opacity: 0, width: '50vw' }}
-            // animate={{ opacity: 1, width: '60vw' }}
-            // exit={{ opacity: 0, width: '50vw' }}
-            // transition={{ type: "tween"}}
-            initial="hidden"
-            animate="visible"
-            exit="exit"
-            variants={isMobile ? mobileVariants : desktopVariants}
-            className="h-[calc(100vh_-_48px)] w-[100vw] *:w-full *:text-center md:w-96 absolute top-[48px] right-0 pt-14 flex flex-col gap-2 border border-stone-50/10 bg-gradient-to-br from-stone-950 via-stone-900 to-stone-800 rounded-sm"
+            initial={{ opacity: 0, scaleX: 0.2 }}
+            animate={{ opacity: 1, scaleX: 1 }}
+            exit={{ opacity: 0, scaleX: 0 }}
+            transition={{ type: "tween"}}
+            className="h-[calc(100vh_-_48px)] origin-right w-[100vw] *:w-full *:text-center md:w-96 absolute top-[48px] right-0 pt-14 flex flex-col gap-2 border border-stone-50/10 bg-gradient-to-br from-stone-950 via-stone-900 to-stone-800 rounded-sm"
           >
             <div
               className="text-white text-2xl absolute top-5 left-5"
