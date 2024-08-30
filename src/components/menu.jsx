@@ -16,10 +16,10 @@ export default function Menu() {
       <AnimatePresence>
         {isMenuOpen && (
           <motion.div
-            initial={{ opacity: 0, scaleX: 0.95 }}
+            initial={{ opacity: 0, scaleX: 0.5 }}
             animate={{ opacity: 1, scaleX: 1 }}
-            exit={{ opacity: 0, scaleX: 0.95 }}
-            transition={{ duration: 0}}
+            exit={{ opacity: 0, scaleX: 0.5 }}
+            // transition={{ duration: 0}}
             className="h-[calc(100vh_-_48px)] origin-right w-[100vw] *:w-full *:text-center md:w-96 absolute top-[34px] -right-4 pt-14 flex flex-col gap-2 border border-stone-50/10 bg-stone-900 rounded-sm"
           >
             <div
