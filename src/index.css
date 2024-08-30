@@ -49,3 +49,7 @@ code {
     opacity: 1;
   }
 }
+
+.will-change-transform {
+  will-change: transform, opacity;
+}

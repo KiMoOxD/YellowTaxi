@@ -20,7 +20,7 @@ export default function Menu() {
             animate={{ opacity: 1, scaleX: 1 }}
             exit={{ opacity: 0, scaleX: 0.95 }}
             transition={{ type: "tween"}}
-            className="h-[calc(100vh_-_48px)] origin-right w-[100vw] *:w-full *:text-center md:w-96 absolute top-[48px] right-0 pt-14 flex flex-col gap-2 border border-stone-50/10 bg-stone-900 rounded-sm"
+            className="h-[calc(100vh_-_48px)] will-change-transform origin-right w-[100vw] *:w-full *:text-center md:w-96 absolute top-[48px] right-0 pt-14 flex flex-col gap-2 border border-stone-50/10 bg-stone-900 rounded-sm"
           >
             <div
               className="text-white text-2xl absolute top-5 left-5"
