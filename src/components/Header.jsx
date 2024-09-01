@@ -8,6 +8,8 @@ import AccountInfo from "./AccountInfo";
 
 export default function Header() {
   let { currentUser } = useAuth()
+  console.log("header");
+
   return (
     <div className="flex sticky bg-yellow-300/5 rounded-lg h-12 top-0 z-40 mx-auto justify-between items-center px-4">
       <Link to={`/`}>

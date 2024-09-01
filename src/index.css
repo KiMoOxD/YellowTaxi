@@ -6,7 +6,7 @@ body {
   margin: 0;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background: url(./graph-pattern.gif), radial-gradient(58.79% 82.68% at 19.65% 7.75%, #272727 0, #171717 100%);
+  background: url(./graph-pattern.gif), #171717;
   background-blend-mode: multiply, normal;
   min-height: 100vh;
   min-width: 100%;

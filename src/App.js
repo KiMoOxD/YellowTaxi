@@ -26,6 +26,7 @@ const router = createBrowserRouter([
 ]);
 
 function App() {
+  console.log('app')
   return (
     <AuthProvider>
       <GeneralContextProvider>

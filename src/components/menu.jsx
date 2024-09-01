@@ -4,22 +4,23 @@ import { NavLink } from "react-router-dom";
 import { IoMdClose } from "react-icons/io";
 import { useGeneralContext } from "../context/GeneralContext";
 import { motion } from "framer-motion";
+import { AnimatePresence } from "framer-motion";
 
 export default function Menu() {
-  let { isMenuOpen, toggleMenu } = useGeneralContext()
-  console.log('menu')
+  let { isMenuOpen, toggleMenu } = useGeneralContext();
+  console.log("menu");
 
   return (
     <div className="lg:hidden text-xl cursor-pointer">
       {!isMenuOpen && <CiMenuBurger onClick={toggleMenu} />}
       {isMenuOpen && <IoMdClose onClick={toggleMenu} />}
-      {/* <AnimatePresence> */}
+      <AnimatePresence>
         {isMenuOpen && (
           <motion.div
-            initial={{ opacity: 0.5, x: '20px' }}
+            initial={{ opacity: 0.3, x: '50px' }}
             animate={{ opacity: 1, x: '0' }}
-            exit={{ opacity: 0.5, x: '20px' }}
-            transition={{ duration: 0.3}}
+            exit={{ opacity: 0, x: '50px' }}
+            transition={{ duration: 0.2}}
             className="h-[calc(100vh_-_48px)] origin-right w-full *:w-full *:text-center md:w-96 absolute top-[48px] right-0 pt-14 flex flex-col gap-2 border border-stone-50/10 bg-stone-900 rounded-sm"
           >
             <div
@@ -45,7 +46,19 @@ export default function Menu() {
             </NavLink>
           </motion.div>
         )}
-      {/* </AnimatePresence> */}
+
+        {/* {isMenuOpen && (
+          <motion.div
+            initial={{ opacity: 0.5, x: "200px" }}
+            animate={{ opacity: 1, x: "0" }}
+            exit={{ opacity: 0, x: "200px" }}
+            transition={{ duration: 1}}
+            className="*:w-full *:text-center md:w-96 absolute top-[48px] right-0 pt-14 flex flex-col gap-2 rounded-sm"
+          >
+            dsad
+          </motion.div>
+        )} */}
+      </AnimatePresence>
       {isMenuOpen && (
         <div className="top-8 right-5 animate-bounce border-b-4 border-r-4 border-l-4 border-b-stone-50 border-transparent bg-transparent size-2.5 bg-slate-800 absolute"></div>
       )}

@@ -15,14 +15,14 @@ export default function AboutPage() {
   return (
     <div className="min-h-[100vh] py-5 flex flex-col justify-center">
       <motion.div
-        initial={{ opacity: 0, x: -500 }}
+        initial={{ opacity: 0, x: -50 }}
         animate={{ opacity: 1, x: 0 }}
         transition={{ type: "spring" }}
         className="px-4 mb-5 grid grid-cols-1 place-items-center lg:grid-cols-3"
       >
         <div className="flex items-center lg:items-start relative flex-col gap-2">
           <motion.div
-            initial={{ opacity: 0, scale: 0.1 }}
+            initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ type: "spring" }}
             className="relative"
@@ -30,12 +30,12 @@ export default function AboutPage() {
             <img
               src={star}
               alt=""
-              className="absolute top-0 md:-top-1 md:left-[32.5px] md:w-[44px] lg:-top-2.5 left-[26px] w-[38px] lg:left-[46px] lg:w-[52px] drop-shadow-[0_0_12px_#facc1530]"
+              className="absolute top-0 md:top-1.5 md:left-[32px] md:w-[35px] lg:-top-1 left-[22px] w-[38px] lg:left-[39px] lg:w-[52px] drop-shadow-[0_0_12px_#facc1530]"
             />
             <TextEffect
               per="word"
               preset="fade"
-              className="mt-3 mb-1 text-3xl md:text-4xl lg:text-5xl text-yellow-400 font-semibold drop-shadow-[0_0_12px_#facc15]"
+              className="mt-3 mb-1 text-3xl md:text-4xl lg:text-5xl text-yellow-400 font-semibold drop-shadow-[0_0_3px_#facc15]"
             >
               Kareem Mohamed
             </TextEffect>
@@ -72,14 +72,14 @@ export default function AboutPage() {
       </motion.div>
 
       <motion.div
-        initial={{ opacity: 0, x: 500 }}
+        initial={{ opacity: 0, x: 50 }}
         animate={{ opacity: 1, x: 0 }}
         transition={{ type: "spring" }}
         className="px-4 grid grid-cols-1 place-items-center lg:grid-cols-3"
       >
         <div className="flex items-center lg:items-start relative flex-col gap-2">
           <motion.div
-            initial={{ opacity: 0, scale: 0.1 }}
+            initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ type: "spring" }}
             className="relative"
@@ -87,12 +87,12 @@ export default function AboutPage() {
             <img
               src={star}
               alt=""
-              className="absolute top-0 md:-top-1 md:left-[32.5px] md:w-[44px] lg:-top-2.5 left-[26px] w-[38px] lg:left-[46px] lg:w-[52px] drop-shadow-[0_0_12px_#facc1530]"
+              className="absolute top-0.5 md:top-1 md:left-[32px] md:w-[35px] lg:-top-1 left-[22px] w-[38px] lg:left-[39px] lg:w-[52px] drop-shadow-[0_0_12px_#facc1530]"
             />
             <TextEffect
               per="word"
               preset="fade"
-              className="mt-3 mb-1 text-3xl md:text-4xl lg:text-5xl text-yellow-400 font-semibold drop-shadow-[0_0_12px_#facc15]"
+              className="mt-3 mb-1 text-3xl md:text-4xl lg:text-5xl text-yellow-400 font-semibold drop-shadow-[0_0_3px_#facc15]"
             >
               Youssef Ahmed
             </TextEffect>
